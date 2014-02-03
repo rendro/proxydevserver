@@ -14,11 +14,16 @@ class BrowserifyMiddleware
 			extensions: ['.coffee']
 
 		if @config.options.paths
+
+
 			# make paths absolute
 			@config.options.paths[i] = path.join(process.cwd(), x) for i, x of @config.options.paths when typeof x is 'string' and x.match /^\.\//
 
 			options.resolve = (pkg, options, cb) =>
 				options.paths = @config.options.paths.concat options.paths
+
+				# filter empty paths because otherwise it breaks the resolver
+				options.paths = options.paths.filter (p) -> p != ''
 
 				if pkg.match /^\.\.?\//
 					options.basedir = path.dirname(options.filename)

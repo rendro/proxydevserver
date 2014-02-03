@@ -1,0 +1,22 @@
+devserver:
+	host: 'localhost'
+	port: 3000
+	livereload: true
+	# staticDir: './static/'
+	proxy:
+		host: 'localhost'
+		port: 8181
+	# middlewares:
+	# 	less:
+	# 		src: '/app.css'
+	# 		dest: '/entry.css'
+	# 		options:
+	# 			src: './sourcestyles/'
+	# 			dest: './static'
+	# 			compress: false
+	# 			sourceMap: false
+	# 			paths:
+	# 				- './sourceincludes/'
+	# 	browserify:
+	# 		src: '/app.js'
+	# 		dest: './static/entry.js'

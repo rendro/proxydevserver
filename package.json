@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Proxy dev server written in node",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon server.coffee"
+    "start": "./node_modules/.bin/coffee server.coffee"
   },
   "bin": {
     "proxydevserver": "./bin/proxydevserver.js"
@@ -11,23 +11,16 @@
   "author": "Robert Fleischmann",
   "private": true,
   "dependencies": {
-    "coffee-script": "~1.6.3",
-    "less-middleware": "~0.1.15",
+    "coffee-script": "~1.7.1",
+    "connect": "~2.12.0",
     "colors": "~0.6.2",
     "yaml": "~0.2.3",
-    "connect": "~2.12.0",
     "livereload": "~0.3.2",
-    "browserify-middleware": "~2.3.0",
-    "handlebars": "~1.3.0",
-    "cheerio": "~0.13.1",
-    "opts": "~1.2.2",
+    "less-middleware": "~0.1.15",
     "through": "~2.3.4",
+    "browserify": "~3.24.11",
+    "resolve": "~0.6.1",
     "coffeeify": "~0.6.0",
-    "browserify": "~3.24.8",
-    "browser-resolve": "~1.2.2",
-    "resolve": "~0.6.1"
-  },
-  "devDependencies": {
-    "nodemon": "~1.0.14"
+    "opts": "~1.2.2"
   }
 }

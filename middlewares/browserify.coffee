@@ -67,8 +67,8 @@ class BrowserifyMiddleware
 					))
 					data = convert.removeComments(data)
 					data += "\n#{sourceMap.toComment()}\n"
-					res.write(data)
-					res.end()
+				res.write(data)
+				res.end()
 			@b.bundle({ debug: withSourceMap }).pipe(through(handleData, end))
 		else
 			next()

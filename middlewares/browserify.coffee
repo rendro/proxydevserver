@@ -4,6 +4,7 @@ url        = require 'url'
 through    = require 'through'
 browserify = require 'browserify'
 resolve    = require 'resolve'
+convert    = require 'convert-source-map'
 
 class BrowserifyMiddleware
 	constructor: (@config) ->
@@ -50,7 +51,20 @@ class BrowserifyMiddleware
 				'content-type': 'text/javascript;charset=utf-8'
 			}
 
-			@b.bundle({}).pipe(res)
+			withSourceMap = @config.options.sourceMap || false
+			data = ''
+			handleData = (chunk) -> data += chunk
+			end = ->
+				if withSourceMap
+					sourceMap = convert.fromSource(data)
+					sourceMap.setProperty('sources', sourceMap.getProperty('sources').map((source) ->
+						return path.relative(process.cwd(), source)
+					))
+					data = convert.removeComments(data)
+					data += "\n#{sourceMap.toComment()}\n"
+					res.write(data)
+					res.end()
+			@b.bundle({ debug: withSourceMap }).pipe(through(handleData, end))
 		else
 			next()
 

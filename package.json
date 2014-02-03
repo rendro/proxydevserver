@@ -21,6 +21,7 @@
     "browserify": "~3.24.11",
     "resolve": "~0.6.1",
     "coffeeify": "~0.6.0",
-    "opts": "~1.2.2"
+    "opts": "~1.2.2",
+    "convert-source-map": "~0.3.3"
   }
 }

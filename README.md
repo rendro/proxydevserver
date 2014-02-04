@@ -20,15 +20,18 @@ devserver:
   # serve static files
   staticDir: './static/'
   proxy:
-  	# host of the target server
+    # host of the target server
     host: 'localhost'
     # port of the target server
     port: 8181
   middlewares:
     # configure less middleware
     less:
+      # url to intersect
       src: '/app.css'
+      # url to rewrite src
       dest: '/entry.css'
+      # less middleware opeions
       options:
         src: './sourcestyles/'
         dest: './static'
@@ -36,14 +39,20 @@ devserver:
         sourceMap: false
         paths:
           - './sourceincludes/'
+    # configure browserify middleware
     browserify:
+      # url to intersect
       src: '/app.js'
+      # url to rewrite src
       dest: './static/entry.js'
+      # browserify options
       options:
+        sourceMap: true
         transforms:
           - coffeeify
         aliases:
           - "js/ext/jquery.js#jquery"
         paths:
           - './sourceincludes/'
+
 ```

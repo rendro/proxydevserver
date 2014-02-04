@@ -1,4 +1,4 @@
-# Proxy dev server
+# Proxy dev server [![NPM version](https://badge.fury.io/js/proxydevserver.png)](http://badge.fury.io/js/proxydevserver)
 
 The proxydevserver is highly inspired by [KnisterPeters](https://github.com/KnisterPeter) [smaller-dev-server](https://github.com/KnisterPeter/smaller-dev-server). It aims to proxy all requests, intersecting some to serve a fresh set of assets like images, JavaScript or Stylesheets.
 
@@ -6,6 +6,13 @@ Currently it supports the following middelwares:
 
 * LESS.js
 * Browserify
+
+## Install
+
+```
+$ npm install -g proxydevserver
+$ proxydevserver -c config.yml
+```
 
 ## config.yml
 

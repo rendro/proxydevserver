@@ -8,8 +8,23 @@
   "bin": {
     "proxydevserver": "./bin/proxydevserver.js"
   },
-  "author": "Robert Fleischmann",
-  "private": true,
+  "author": {
+    "name": "Robert Fleischmann",
+    "email": "rendro87@gmail.com",
+    "url": "http://robert-fleischmann.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "rendro/proxydevserver"
+  },
+  "bugs": {
+    "url": "https://github.com/rendro/proxydevserver/issues"
+  },
+  "keywords": [
+    "proxy",
+    "browserify",
+    "lessjs"
+  ],
   "dependencies": {
     "coffee-script": "~1.7.1",
     "connect": "~2.12.0",

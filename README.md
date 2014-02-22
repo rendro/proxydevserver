@@ -63,3 +63,8 @@ devserver:
           - './sourceincludes/'
 
 ```
+
+Credits
+-------
+
+Thanks to [SinnerSchrader](http://www.sinnerschrader.com/) for their support 

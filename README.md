@@ -64,8 +64,6 @@ devserver:
 
 ```
 
-Credits
--------
 
 Credits
 -------
